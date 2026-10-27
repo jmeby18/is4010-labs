@@ -42,7 +42,7 @@ fn problem_1() {
     println!("  The length of '{}' is {}.", s1, len);
 }
 
-fn calculate_length(s: &String) -> usize {
+fn calculate_length(s: &str) -> usize {
     s.len()
 }
 
@@ -103,7 +103,7 @@ fn problem_4() {
     }
 
     let r2 = &mut s;
-    r2.push_str("!");
+    r2.push('!');
     println!("  Second borrow: {}", r2);
 }
 
@@ -122,8 +122,7 @@ fn problem_5() {
 }
 
 fn create_string() -> String {
-    let s = String::from("hello");
-    s
+    String::from("hello")
 }
 
 // ============================================================================
