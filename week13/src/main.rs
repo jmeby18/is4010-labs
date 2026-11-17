@@ -36,8 +36,13 @@ pub fn analyze_text(text: &str) -> (usize, f64, String) {
     };
     let longest_word = words
         .into_iter()
-        .max_by_key(|word| word.len())
-        .unwrap_or("")
+        .fold("", |longest, word| {
+            if word.len() > longest.len() {
+                word
+            } else {
+                longest
+            }
+        })
         .to_string();
 
     (word_count, average_word_length, longest_word)
